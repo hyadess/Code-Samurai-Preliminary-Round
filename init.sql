@@ -2,8 +2,8 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 15.5 (Ubuntu 15.5-1.pgdg22.04+1)
--- Dumped by pg_dump version 15.5 (Ubuntu 15.5-1.pgdg22.04+1)
+-- Dumped from database version 16.1 (Ubuntu 16.1-1.pgdg22.04+1)
+-- Dumped by pg_dump version 16.1 (Ubuntu 16.1-1.pgdg22.04+1)
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -59,30 +59,6 @@ CREATE TABLE public.users (
 
 
 ALTER TABLE public.users OWNER TO postgres;
-
---
--- Data for Name: stations; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY public.stations (station_id, station_name, longitude, latitude) FROM stdin;
-\.
-
-
---
--- Data for Name: trains; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY public.trains (train_id, train_name, capacity) FROM stdin;
-\.
-
-
---
--- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY public.users (user_id, user_name, balance) FROM stdin;
-\.
-
 
 --
 -- Name: stations Stations_primary_key; Type: CONSTRAINT; Schema: public; Owner: postgres
