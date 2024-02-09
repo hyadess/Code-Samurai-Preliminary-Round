@@ -1,0 +1,1 @@
+psql -c "ALTER USER postgres WITH PASSWORD 'root';" && psql -c "CREATE DATABASE codesamurai;" && psql -c "GRANT ALL PRIVILEGES ON DATABASE codesamurai TO postgres;"
