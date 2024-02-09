@@ -11,12 +11,12 @@ class WalletController extends Controller {
         this.handleRequest(res, async () => {
             const { user_id } = req.params;
             const result = await userRepository.getUser(user_id);
-            //console.log(result);
+            console.log(result);
         
             if (result.data.length > 0) {
                 const data = {
                     wallet_id: result.data[0].user_id,
-                    wallet_balance: result.data[0].balance,
+                    balance: result.data[0].balance,
                     wallet_user: {
                         user_id: result.data[0].user_id,
                         user_name: result.data[0].user_name
@@ -51,7 +51,7 @@ class WalletController extends Controller {
                 if (result.data.length > 0) {
                     const data = {
                         wallet_id: result.data[0].user_id,
-                        wallet_balance: result.data[0].balance,
+                        balance: result.data[0].balance,
                         wallet_user: {
                             user_id: result.data[0].user_id,
                             user_name: result.data[0].user_name
