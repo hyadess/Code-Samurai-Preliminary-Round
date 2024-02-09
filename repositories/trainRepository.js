@@ -5,7 +5,7 @@ class TrainRepository extends Repository {
         super();
     }
 
-    getTrainById = async (userId, contestId) => {
+    addTrain = async () => {
         const query = `
             INSERT INTO "Participants" ("contestId", "participantId", "type")
             VALUES ($1 ,$2, $3);

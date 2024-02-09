@@ -41,7 +41,8 @@ ALTER TABLE public.stations OWNER TO postgres;
 CREATE TABLE public.trains (
     train_id integer NOT NULL,
     train_name character varying(50),
-    capacity integer
+    capacity integer,
+    stops json[]
 );
 
 
@@ -65,6 +66,7 @@ ALTER TABLE public.users OWNER TO postgres;
 --
 
 COPY public.stations (station_id, station_name, longitude, latitude) FROM stdin;
+1	farmgate	4.5	3.5
 \.
 
 
@@ -72,7 +74,7 @@ COPY public.stations (station_id, station_name, longitude, latitude) FROM stdin;
 -- Data for Name: trains; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.trains (train_id, train_name, capacity) FROM stdin;
+COPY public.trains (train_id, train_name, capacity, stops) FROM stdin;
 \.
 
 
@@ -81,6 +83,7 @@ COPY public.trains (train_id, train_name, capacity) FROM stdin;
 --
 
 COPY public.users (user_id, user_name, balance) FROM stdin;
+1	dihan	40
 \.
 
 
