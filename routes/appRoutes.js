@@ -2,7 +2,7 @@ const router = require("express").Router();
 const base = require("../repositories/base");
 
 const userRoutes = require("./userRoutes");
-
+const stationRoutes = require("./stationRoutes");
 router.get("/", async (req, res) => {
   const result = await new base().check();
   if (result.success) {
@@ -13,5 +13,6 @@ router.get("/", async (req, res) => {
 });
 
 router.use("/users", userRoutes);
+router.use("/stations", stationRoutes);
 
 module.exports = router;
