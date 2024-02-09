@@ -16,6 +16,14 @@ class StationRepository extends Repository {
         const result = await this.query(query, params);
         return result;
     };
+
+    getStations = async () => {
+        const query = `
+            SELECT * FROM stations;
+            `;
+        const result = await this.query(query);
+        return result;
+    }
     
 }
 

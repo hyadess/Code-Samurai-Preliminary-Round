@@ -1,10 +1,10 @@
 class Controller {
     constructor() {}
-    handleResponse(result,body, res,success,failure) {
+    handleResponse(result,body, res,success,failure,errorBody="internal server error") {
       if (result.success) {
         res.status(success).json(body);
       } else {
-        res.status(failure).json(result);
+        res.status(failure).json(errorBody);
       }
     }
   

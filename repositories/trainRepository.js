@@ -5,18 +5,23 @@ class TrainRepository extends Repository {
         super();
     }
 
-    addTrain = async () => {
+    addTrain = async (train_id,train_name,capacity) => {
         const query = `
-            INSERT INTO "Participants" ("contestId", "participantId", "type")
-            VALUES ($1 ,$2, $3);
+            INSERT INTO trains (train_id, train_name, capacity)
+            VALUES ($1 ,$2, $3)
+            RETURNING *;
             `;
-        const params = [contestId, userId, 1];
+        const params = [train_id, train_name, capacity];
         const result = await this.query(query, params);
         return result;
       };
+
+    
 
 
 
 
 
 }
+
+module.exports = TrainRepository;
