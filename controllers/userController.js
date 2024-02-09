@@ -8,10 +8,12 @@ class UserController extends Controller {
     }
 
     addUser = async (req, res) => {
-        const { user_id, user_name, balance } = req.body;
-        
-        const result = await userRepository.addUser(user_id, user_name, balance);
-        this.handleResponse(result,result.data[0],res,201,500);
+        this.handleRequest(res, async () => {
+            const { user_id, user_name,balance } = req.body;
+            const result = await userRepository.addUser(user_id, user_name, balance);
+            this.handleResponse(result, result.success?result.data[0]:null, res, 201, 500);
+        }
+        );
         
         
     };
