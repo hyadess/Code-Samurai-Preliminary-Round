@@ -1,3 +1,5 @@
+// config dotenv
+require("dotenv").config();
 const Pool = require("pg").Pool;
 
 class Repository {
