@@ -4,3 +4,6 @@ Dockerfile
 .git
 .gitignore
 docker-compose*
+setup.sh
+run.sh
+dump.sh
