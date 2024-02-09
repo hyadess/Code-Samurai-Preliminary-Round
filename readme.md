@@ -1,2 +1,2 @@
 Team: AREKTA_TEAM
-Institution:
+Institution: Bangladesh University of Engineering and Technology
