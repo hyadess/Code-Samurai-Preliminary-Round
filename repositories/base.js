@@ -1,7 +1,3 @@
-const path = require("path");
-require("dotenv").config({
-  path: `.env${process.env.NODE_ENV ? "." + process.env.NODE_ENV : ""}`,
-});
 const Pool = require("pg").Pool;
 
 class Repository {
@@ -43,11 +39,11 @@ class Repository {
     }
   };
 
-    // code to close connection
-    close = async () => {
-      if (this.pool) {
-        await this.pool.end();
-      }
-    };
+  // code to close connection
+  close = async () => {
+    if (this.pool) {
+      await this.pool.end();
+    }
+  };
 }
 module.exports = Repository;
