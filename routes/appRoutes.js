@@ -3,6 +3,10 @@ const base = require("../repositories/base");
 
 const userRoutes = require("./userRoutes");
 const stationRoutes = require("./stationRoutes");
+const trainRoutes = require("./trainRoutes");
+const walletRoutes = require("./walletRoutes");
+const ticketRoutes = require("./ticketRoutes");
+const routeRoutes = require("./routeRoutes");
 router.get("/", async (req, res) => {
   const result = await new base().check();
   if (result.success) {
@@ -14,5 +18,9 @@ router.get("/", async (req, res) => {
 
 router.use("/users", userRoutes);
 router.use("/stations", stationRoutes);
+router.use("/trains", trainRoutes);
+router.use("/wallets", walletRoutes);
+router.use("/tickets", ticketRoutes);
+router.use("/routes", routeRoutes);
 
 module.exports = router;
