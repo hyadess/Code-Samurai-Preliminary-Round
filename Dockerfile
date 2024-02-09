@@ -6,12 +6,16 @@ RUN npm i
 COPY . .
 EXPOSE 8000
 
+CMD ["node", "index.js"]
+
+# Alternative: Comment CMD ["node", "index.js"] and uncomment the following lines
+
 # Setup Database
-RUN apt-get update && \
-    apt-get install -y postgresql && \
-    apt-get clean
-USER postgres
+# RUN apt-get update && \
+#     apt-get install -y postgresql && \
+#     apt-get clean
+# USER postgres
 
-RUN /etc/init.d/postgresql start && psql -c "ALTER USER postgres WITH PASSWORD 'root';" && psql -c "CREATE DATABASE codesamurai;" && psql -c "GRANT ALL PRIVILEGES ON DATABASE codesamurai TO postgres;" && psql -d "postgres://postgres:root@localhost:5432/codesamurai" -a -f init.sql
+# RUN /etc/init.d/postgresql start && psql -c "ALTER USER postgres WITH PASSWORD 'root';" && psql -c "CREATE DATABASE codesamurai;" && psql -c "GRANT ALL PRIVILEGES ON DATABASE codesamurai TO postgres;" && psql -d "postgres://postgres:root@localhost:5432/codesamurai" -a -f init.sql
 
-ENTRYPOINT ["bash", "entrypoint.sh"]
+# ENTRYPOINT ["bash", "entrypoint.sh"]
