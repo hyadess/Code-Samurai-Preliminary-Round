@@ -1,10 +1,10 @@
 class Controller {
     constructor() {}
-    handleResponse(result, res) {
+    handleResponse(result,body, res,success,failure) {
       if (result.success) {
-        res.status(200).json(result.data);
+        res.status(success).json(body);
       } else {
-        res.status(500).json(result);
+        res.status(failure).json(result);
       }
     }
   

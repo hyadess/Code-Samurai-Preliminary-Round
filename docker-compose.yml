@@ -1,8 +1,22 @@
 version: "3"
 services:
+  postgres:
+    image: postgres
+    restart: always
+    container_name: sol-database
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: codesamurai
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
   app:
     image: sol:latest
     container_name: sol
+    restart: always
+    depends_on:
+      - postgres
     ports:
       - "8000:8000"
     env_file:
